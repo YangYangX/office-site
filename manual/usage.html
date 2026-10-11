@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How To Use The Corecent AI Virtual Office Manual</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="manual-utilities.css">
+    <style>
+      
+
+      :root {
+        --bg: #fff4d6;
+        --text: #241825;
+        --muted-text: #655b73;
+        --line: #d1b67e;
+        --surface: #fffaf0;
+        --accent: #ff4f38;
+        --control-active-bg: #22345a;
+        --pixel-border: #241825;
+        --grid-line: rgba(36, 24, 37, 0.06);
+      }
+
+      :root[data-theme="dark"] {
+        --bg: #071829;
+        --text: #f8fafc;
+        --muted-text: #aab3c2;
+        --line: #35506a;
+        --surface: #0f2436;
+        --accent: #ff6b45;
+        --control-active-bg: #1f3650;
+        --pixel-border: #ffd166;
+        --grid-line: rgba(255, 209, 102, 0.055);
+      }
+
+      body {
+        background:
+          linear-gradient(var(--grid-line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+          var(--bg);
+        background-size: 24px 24px, 24px 24px, auto;
+        color: var(--text);
+      }
+
+      code {
+        background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+        border: 1px solid color-mix(in srgb, var(--pixel-border) 24%, transparent);
+        border-radius: 4px;
+        padding: 1px 5px;
+      }
+
+      .muted-text {
+        color: var(--muted-text);
+      }
+
+      .surface {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        box-shadow: 0 5px 0 color-mix(in srgb, var(--pixel-border) 18%, transparent);
+      }
+    </style>
+  <link rel="stylesheet" href="manual-addon.css"></head>
+  <body class="font-body">
+    <header class="border-b border-hairline">
+      <div class="mx-auto max-w-[1120px] px-6 py-5">
+        <nav class="flex flex-wrap items-center justify-between gap-4 text-sm">
+          <a href="index.html" class="font-mono uppercase text-ink">Corecent AI Virtual Office Manual</a>
+          <div class="flex flex-wrap items-center gap-5 text-slate">
+            <a class="hover:text-ink" href="manual.html#runtime-state">命令</a>
+            <a class="hover:text-ink" href="manual.html#payloads">Payloads</a>
+            <a class="hover:text-ink" href="index.html#examples">场景库</a>
+            <button
+              id="theme-toggle"
+              type="button"
+              class="rounded-full border border-hairline px-4 py-2 text-sm text-ink"
+              aria-label="Toggle dark mode"
+            >
+              Dark
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-[1120px] px-6 py-16">
+      <section class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+        <div>
+          <p class="font-mono text-sm uppercase text-coral">How to use this manual</p>
+          <h1 class="mt-4 font-display text-4xl font-normal leading-tight md:text-6xl">
+            从项目理解，过渡到可执行命令
+          </h1>
+        </div>
+        <p class="text-lg leading-8 muted-text">
+          这页只说明怎么阅读和使用完整 manual。完整 payload、step、NPC command 和地图对象维护在
+          <a class="underline" href="manual.html">manual.html</a>；场景配方库和 JSON 浏览器维护在
+          <a class="underline" href="index.html#examples">index.html</a>。
+        </p>
+      </section>
+
+      <section class="mt-12 grid gap-4 lg:grid-cols-3">
+        <article class="surface rounded-lg p-6">
+          <p class="font-mono text-xs uppercase text-coral">01</p>
+          <h2 class="mt-4 text-2xl font-normal">先理解办公室表面</h2>
+          <p class="mt-3 text-sm leading-6 muted-text">
+            先看首页的项目介绍和截图，理解你将控制什么：NPC、对话、气泡、地图对象、交互配置和运行状态。
+          </p>
+          <a class="mt-5 inline-block text-sm font-medium underline" href="index.html#project-overview">查看项目介绍</a>
+        </article>
+
+        <article class="surface rounded-lg p-6">
+          <p class="font-mono text-xs uppercase text-coral">02</p>
+          <h2 class="mt-4 text-2xl font-normal">再选择命令入口</h2>
+          <p class="mt-3 text-sm leading-6 muted-text">
+            固定流程用 <code>startScript</code>；使用者或工具的实时意图用 <code>startInteraction</code>。
+            只读排查时使用 <code>state()</code>。
+          </p>
+          <a class="mt-5 inline-block text-sm font-medium underline" href="manual.html#runtime-state">查看命令入口</a>
+        </article>
+
+        <article class="surface rounded-lg p-6">
+          <p class="font-mono text-xs uppercase text-coral">03</p>
+          <h2 class="mt-4 text-2xl font-normal">最后查字典和配方</h2>
+          <p class="mt-3 text-sm leading-6 muted-text">
+            payload、step、command、地图对象和场景配方，是把想法变成可执行指令的查询区。
+          </p>
+          <a class="mt-5 inline-block text-sm font-medium underline" href="index.html#examples">查看场景库</a>
+        </article>
+      </section>
+
+      <section class="surface mt-12 rounded-lg p-6">
+        <p class="font-mono text-xs uppercase text-coral">Quick route</p>
+        <div class="mt-5 grid gap-4 md:grid-cols-2">
+          <a class="rounded-lg border border-hairline p-4 hover:bg-stone" href="manual.html#api">
+            <span class="font-medium">事件和 command plane</span>
+            <span class="mt-2 block text-sm leading-6 muted-text">查看 runtime event、payload 类型和推荐调用入口。</span>
+          </a>
+          <a class="rounded-lg border border-hairline p-4 hover:bg-stone" href="manual.html#steps">
+            <span class="font-medium">Script Step 字典</span>
+            <span class="mt-2 block text-sm leading-6 muted-text">查每一种 step 的字段、约束和使用方式。</span>
+          </a>
+          <a class="rounded-lg border border-hairline p-4 hover:bg-stone" href="manual.html#npc-commands">
+            <span class="font-medium">NPC Command 字典</span>
+            <span class="mt-2 block text-sm leading-6 muted-text">查底层 NPC command 的队列语义和参数。</span>
+          </a>
+          <a class="rounded-lg border border-hairline p-4 hover:bg-stone" href="manual.html#map-content">
+            <span class="font-medium">地图对象</span>
+            <span class="mt-2 block text-sm leading-6 muted-text">查可交互点、座位和门的对象名。</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const button = document.getElementById("theme-toggle");
+      const saved = localStorage.getItem("office-manual-theme");
+      const theme = saved === "dark" ? "dark" : "light";
+      document.documentElement.dataset.theme = theme;
+      button.textContent = theme === "dark" ? "Light" : "Dark";
+      button.addEventListener("click", () => {
+        const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem("office-manual-theme", next);
+        button.textContent = next === "dark" ? "Light" : "Dark";
+      });
+    </script>
+  <script src="manual-addon.js"></script></body>
+</html>
