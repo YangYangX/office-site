@@ -14,8 +14,11 @@
   const note = document.createElement('aside'); note.className = 'manual-site-note';
   const home = document.createElement('a'); home.href = '../index.html';
   const description = document.createElement('p'); note.append(home, description); document.body.prepend(note);
+  const releaseNotice = '0.2.15' !== '0.2.12' ? document.createElement('p') : null;
+  if (releaseNotice) { releaseNotice.id = 'release-notice'; note.insertBefore(releaseNotice, description); }
   const update = () => {
     const zh = document.documentElement.lang.startsWith('zh');
+    if (releaseNotice) releaseNotice.textContent = zh ? '本站文档对应 0.2.15 版本。公开下载仍为 0.2.12 版本；此处介绍的新修复和行为尚未包含在这些安装包中。' : 'This site documents version 0.2.15. Public downloads are version 0.2.12; newer fixes and behavior described here are not included in those installers.';
     home.textContent = zh ? '← 返回产品首页 / 下载与试玩' : '← Product home / downloads and demo';
     description.textContent = zh ? '七位员工、一位虚构老板，还有大量虚拟咖啡：桌面应用观察真实智能体工作。这里是开发者参考，保留旧版 Skill、调试命令和剧本配方。控制台命令需要兼容的开发运行环境，不能直接在正式桌面应用或网页演示中执行。普通用户请使用首页的通用 MCP 设置流程。' : 'Seven employees, one fictional boss, and a lot of imaginary coffee: the desktop app observes real agent work. This is the developer reference for legacy Skill, debug commands and scripted recipes. Console commands require a compatible development runtime; they do not run in the production desktop app or this website demo. For normal use, follow the generic MCP setup on the product homepage.';
   };

@@ -1,4 +1,5 @@
 const officeChinese = {
+  "This site documents version 0.2.15. Public downloads are version 0.2.12; newer fixes and behavior described here are not included in those installers.": "本站文档对应 0.2.15 版本。公开下载仍为 0.2.12 版本；此处介绍的新修复和行为尚未包含在这些安装包中。",
   "A small workplace comedy": "一出小小的职场喜剧",
   "Seven employees. One boss with excellent leaving skills.": "七位员工，还有一位擅长早退的老板。",
   "At 09:00, seven employees clock in. A connected, observed working agent or subagent gets one employee to show its activity and public replies. Up to seven agents are represented at once. More remain in Personnel files; select an active agent there to bring it onto the floor. Free coworkers wander, chat or investigate the pool table.": "09:00，七位员工来上班。连接后被观测到正在工作的智能体或子智能体，由一名员工展示其活动和公开回复。办公室同时展示最多七个智能体，其余保留在人员档案中；在那里选择一个活跃智能体，就能让它进入办公室。空闲同事会散步、聊天，或认真研究台球桌。",

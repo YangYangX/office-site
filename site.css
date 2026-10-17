@@ -9,3 +9,5 @@
 .download-links{display:grid;gap:12px;margin:20px 0}.download-links a{width:fit-content}
 
 .technical{padding:70px 0;border-top:2px solid var(--ink)}.recorded-scene{margin:35px 0 0;padding:20px;border:2px solid var(--ink);background:var(--paper)}.recorded-scene img{display:block;width:100%;max-width:760px;height:auto;margin:15px auto;image-rendering:pixelated}.recorded-scene button{font:inherit;padding:10px 16px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);cursor:pointer}.site-header nav>div{flex-wrap:wrap}
+
+#release-notice.availability{display:block;margin-top:24px}
